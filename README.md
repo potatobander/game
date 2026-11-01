@@ -55,3 +55,14 @@ GitHub Pages 从 main 分支根目录发布；.nojekyll 使其作为静态网站
 仓库原有的黄金矿工已原样保留在 gold-rush/，可从赛车页底部进入：
 https://potatobander.github.io/game/gold-rush/
 
+## 新游戏：师傅，等等我！
+
+跟着节奏，左右脚交替迈步，追上即将离站的公交车。根据小视频制作的轻松追车小游戏，支持电脑和手机。
+
+**在线游玩：https://potatobander.github.io/game/games/wait-for-me/**
+
+- 电脑：交替按 A / D 或 ← / →，控制左脚和右脚。
+- 手机：交替轻触屏幕上的左脚、右脚按钮。
+
+游戏文件独立保存在 `games/wait-for-me/`，原有山野快递和黄金矿工继续保留。
+

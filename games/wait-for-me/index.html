@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#214b40">
+  <meta name="description" content="师傅，等等我！左右脚交替，赶上这班黄色公交。一个温暖又手忙脚乱的免费网页小游戏。">
+  <title>师傅，等等我！｜下一站，好运</title>
+  <link rel="icon" type="image/svg+xml" href="./icon.svg"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="page">
+  <header class="topbar"><a class="brand" href="../../" aria-label="返回游戏首页"><span class="brand-icon">21</span><span>街角游戏社<small>SMALL GAMES, GOOD DAYS</small></span></a><div class="top-right"><span class="live-dot"></span><span>下一站，好运</span><a class="home-link" href="../../">游戏大厅 ↗</a></div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">THE LAST-SECOND BUS CLUB</p><h1>师傅，<span>等等我！</span></h1><p class="subtitle">差一点就赶上了？这次，让双脚配合一下。</p></div><div class="intro-ticket"><span>今日出行建议</span><strong>别慌，交替迈步。</strong><small>一场 10 秒钟的街角小冒险</small><i>→</i></div></section>
+    <div class="layout">
+      <section class="game-card" aria-label="追公交小游戏">
+        <div class="game-topline"><span><i></i>21 路 · 幸福里方向</span><div class="tools"><button id="sound" class="icon-btn" aria-label="打开音效" title="音效">♪<span>音效关</span></button><button id="pause" class="icon-btn" disabled aria-label="暂停游戏" title="暂停 / P">Ⅱ<span>暂停</span></button></div></div>
+        <div class="scene-wrap">
+          <canvas id="scene" aria-label="黄色公交停靠在街边，背着书包的小人正在追车"></canvas>
+          <div class="hud" aria-label="游戏进度"><div><span id="time">10.0</span><b>秒</b><small>关门倒计时</small></div><div class="hud-divider"></div><div><span id="distance">6.0</span><b>米</b><small>距离车门</small></div></div>
+          <span class="scene-label">幸福里 · 早上 08:29</span>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card" id="overlay-card">
+              <span class="card-kicker" id="card-kicker">你的公交就要开了</span><h2 id="card-title">再跑两步，<br>就能赶上好事。</h2><p id="card-copy">交替点击左脚、右脚<br>在车门关闭前，跑到公交旁！</p><div class="result-metrics" id="result-metrics" hidden></div><button class="primary" id="start">出发，追上这班车 <span>↗</span></button><small id="start-hint">按空格开始 · 第一脚左右都可以</small>
+            </div>
+          </div>
+          <div class="feedback" id="feedback" aria-hidden="true"></div>
+        </div>
+        <div class="run-track"><div id="track-fill"></div><span class="track-dot" id="track-dot"></span><span class="track-destination">▥</span></div>
+        <div class="controls-area"><div class="step-prompt" id="step-prompt">准备好了吗？左右交替，一起出发。</div><div class="foot-controls"><button class="foot-button left" id="left-foot" disabled aria-label="左脚，键盘 A 或左方向键"><svg viewBox="0 0 40 58" aria-hidden="true"><path d="M25 3c9 1 12 15 9 26l-4 11-15-4c-5-9-7-17-5-25 2-7 7-10 15-8Z"/><path d="m15 40 14 4-2 9c-1 5-16 2-15-4Z"/><path class="sole" d="m14 14 17 4M14 22l17 4M17 30l12 3"/></svg><span>左脚<small>LEFT FOOT</small></span><kbd>A / ←</kbd></button><span class="alternator">⇄</span><button class="foot-button right" id="right-foot" disabled aria-label="右脚，键盘 D 或右方向键"><svg viewBox="0 0 40 58" aria-hidden="true"><path d="M15 3C6 4 3 18 6 29l4 11 15-4c5-9 7-17 5-25C28 4 23 1 15 3Z"/><path d="m25 40-14 4 2 9c1 5 16 2 15-4Z"/><path class="sole" d="m26 14-17 4m17 4L9 26m14 4-12 3"/></svg><span>右脚<small>RIGHT FOOT</small></span><kbd>D / →</kbd></button></div><div class="under-controls"><span><i class="tiny-dot"></i><span id="combo">跟着节奏，别踩同一只脚</span></span><button id="restart" class="text-btn">↻ 重新开始</button></div></div>
+      </section>
+      <aside class="sidebar">
+        <section class="side-card mode-card"><p class="eyebrow">01 / 选一班车</p><h2>今天，赶不赶？</h2><div class="modes" role="group" aria-label="游戏难度"><button data-mode="chill"><span>散步热身<small>14 秒 · 慢慢找节奏</small></span><i>○</i></button><button data-mode="normal" class="selected" aria-pressed="true"><span>日常通勤<small>10 秒 · 刚刚好刺激</small></span><i>●</i></button><button data-mode="rush"><span>极限早八<small>8 秒 · 迟到边缘试探</small></span><i>○</i></button></div></section>
+        <section class="side-card rules"><p class="eyebrow">02 / 追车小抄</p><div class="rule"><b>↔</b><p><strong>左右交替，才能前进</strong><span>点击下方双脚，或按 A / D、← / →。</span></p></div><div class="rule"><b>!</b><p><strong>同一只脚，会绊一下</strong><span>连按同侧会踉跄，稳住后换另一只脚。</span></p></div><div class="rule"><b>♪</b><p><strong>稳稳的，也可以很快</strong><span>找到节奏，连贯迈步有额外加速。</span></p></div></section>
+        <section class="record-card"><span class="record-star">✳</span><div><p>你的最佳乘车记录</p><strong id="best">下一张车票，等你来拿</strong><small id="best-note">成绩保存在当前浏览器</small></div></section>
+        <p class="side-note">生活已经很赶了。<br>至少在这里，师傅会等你 10 秒。</p>
+      </aside>
+    </div>
+  </main>
+  <footer><span>小小的游戏，刚刚好的快乐。</span><span>MADE FOR ONE MORE TRY <span class="footer-flower">✳</span></span></footer>
+</div>
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>
